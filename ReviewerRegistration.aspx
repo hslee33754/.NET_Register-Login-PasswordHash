@@ -10,35 +10,43 @@
     <form id="form1" runat="server">
     <div>
     <table>
-        <tr>
+        <tr display="None">
             <td>First Name</td>
-            <td><asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox></td>
-        </tr>
+            <td><asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="FirstNameRequiredField" runat="server" ErrorMessage="First name required" ControlToValidate="txtFirstName" Display="None"></asp:RequiredFieldValidator>
+            </td>
+         </tr>
          <tr>
             <td>Last Name</td>
             <td><asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtLastName" ErrorMessage="Last name required" Display="None"></asp:RequiredFieldValidator>
-             </td>
+                <asp:RequiredFieldValidator ID="LastNameRequired" runat="server" ControlToValidate="txtLastName" ErrorMessage="Last name required" Display="None"></asp:RequiredFieldValidator>
+            </td>
         </tr>
          <tr>
             <td>Email</td>
             <td><asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtEmail" Display="None" ErrorMessage="Invalid email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-             </td>
+                <asp:RegularExpressionValidator ID="EmailRegularExpression" runat="server" ControlToValidate="txtEmail" Display="None" ErrorMessage="Invalid email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+            </td>
         </tr>
          <tr>
             <td>User Name</td>
             <td><asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtUserName" Display="None" ErrorMessage="User name required"></asp:RequiredFieldValidator>
-             </td>
+                <asp:RequiredFieldValidator ID="UserNameRequiredField" runat="server" ControlToValidate="txtUserName" Display="None" ErrorMessage="User name required"></asp:RequiredFieldValidator>
+            </td>
         </tr>
          <tr>
             <td>Password</td>
-            <td><asp:TextBox ID="txtPassword" runat="server"  TextMode="Password"></asp:TextBox></td>
+            <td><asp:TextBox ID="txtPassword" runat="server"  TextMode="Password"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="PasswordRequiredField" runat="server" ErrorMessage="Password required" Display="None" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
+            </td>
+             
         </tr>
          <tr>
             <td>Confirm Password</td>
-            <td><asp:TextBox ID="txtConfirm" runat="server" TextMode="Password"></asp:TextBox></td>
+            <td><asp:TextBox ID="txtConfirm" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="ConfirmRequiredField" runat="server" ErrorMessage="Password confirm required" ControlToValidate="txtConfirm" Display="None"></asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="PasswordCompare" runat="server" ErrorMessage="Passwords don't match" ControlToValidate="txtConfirm" ControlToCompare="txtPassword" Display="None"></asp:CompareValidator>
+            </td>
         </tr>
          <tr>
             <td>

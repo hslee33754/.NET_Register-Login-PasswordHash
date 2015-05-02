@@ -9,6 +9,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <h1>Welcome to the Book Review Club</h1>
+        <p>Log in or register to leave reviews</p>
         <table>
             <tr>
                 <td>Enter User Name</td>
@@ -25,13 +27,16 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
+                    <asp:Button ID="btnLogin" runat="server" Text="Log in" OnClick="btnLogin_Click" />
                 </td>
                 <td>
-                    <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
         </table>
+        <p>
+            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/ReviewerRegistration.aspx">Register</asp:LinkButton>
+        </p>
     </div>
     </form>
 </body>

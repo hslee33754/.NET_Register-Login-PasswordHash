@@ -33,6 +33,7 @@ public partial class ReviewerRegistration : System.Web.UI.Page
 
         r.ReviewerDateEntered = DateTime.Now;
 
+        //save changes
         db.Reviewers.Add(r);
         db.SaveChanges();
         lblErrorSuccess.Text = "Successfully Registered";
